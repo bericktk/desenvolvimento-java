@@ -1,5 +1,10 @@
 package projeto.biblioteca;
 
+/**
+ * @author Bruno Erick
+ * @version 1.0
+ */
+
 import java.util.ArrayList;
 
 public class Biblioteca {
@@ -11,8 +16,8 @@ public class Biblioteca {
         System.out.println("Livro adicionado com sucesso!.");
     }
 
-    public void removerLivro(Livro livro) {
-        livros.remove(livro);
+    public void removerLivro(int iSBN) {
+        livros.remove(iSBN);
         System.out.println("Livro removido com sucesso!.");
     }
 
