@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public class Biblioteca {
 
     ArrayList<Livro> livros = new ArrayList<Livro>();
+    ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
 
     public void adicionarLivro(Livro livro) {
         livros.add(livro);
@@ -72,5 +73,10 @@ public class Biblioteca {
             }
         }
         System.out.println("Livro não encontrado.");
+    }
+
+    public void addUser(Usuario usuario) {
+        usuarios.add(usuario);
+        System.out.println("Usuário adicionado com sucesso!.");
     }
 }

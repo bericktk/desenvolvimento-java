@@ -1,5 +1,7 @@
 package projeto.biblioteca;
 
+import java.util.Scanner;
+
 /**
  * @author Bruno Erick
  * @version 1.0
@@ -7,7 +9,6 @@ package projeto.biblioteca;
 
 public class Main {
     public static void main(String[] args) {
-        Menu menu = new Menu();
-        menu.menu();
+
     }
 }

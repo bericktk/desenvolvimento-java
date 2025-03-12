@@ -3,7 +3,7 @@ package projeto.biblioteca;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Menu {
+public class CadastroLivro {
     public void menu() {
 
         Biblioteca biblioteca = new Biblioteca();
@@ -55,11 +55,33 @@ public class Menu {
                         biblioteca.listarLivros();
                         break;
                     case 5:
-                        System.out.print("ISBN: ");
-                        ISBN = scan.nextInt();
+                        System.out.println("Digite o cpf do usuário: ");
+                        String cpf = scan.next();
                         scan.nextLine();
-                        biblioteca.emprestarLivro(ISBN);
-                        break;
+
+                        for (Usuario usuario : biblioteca.usuarios) {
+                            if (usuario.getCpf().equals(cpf)) {
+                                System.out.println("Usuário encontrado: " + usuario.getNome());
+                                System.out.println("Digite o ISBN do livro que deseja emprestar: ");
+                                System.out.print("ISBN: ");
+                                ISBN = scan.nextInt();
+                                scan.nextLine();
+                                usuario.setEmprestado(true);
+                                biblioteca.emprestarLivro(ISBN);
+                                break;
+                            
+                            }else if (usuario.getCpf() != cpf) {
+                                System.out.println("Usuário não encontrado.");
+                                CadastroUsuario cadastroUsuario = new CadastroUsuario();
+                                cadastroUsuario.adicionarUsuario(biblioteca);;
+                                break;
+
+                            }else {
+                                System.out.println("Usuário não encontrado.");
+                                break;
+                            }
+                        }
+
                     case 6:
                         System.out.print("ISBN: ");
                         ISBN = scan.nextInt();
