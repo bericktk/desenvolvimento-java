@@ -51,13 +51,13 @@ public class Livro {
     public Livro(String titulo, String autor, int ISBN, int ano_publicacao) {
         this.titulo = titulo;
         this.autor = autor;
-        this.ISBN = ISBN;
+        this.ISBN = ISBN++;
         this.ano_publicacao = ano_publicacao;
         this.emprestado = false;
     }
 
-    void emprestado() {
-        if (this.emprestado == false) {
+    public void emprestado() {
+        if (!this.emprestado == false) {
             this.emprestado = true;
         } else {
             System.out.println("Livro já emprestado.");
